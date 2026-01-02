@@ -29,13 +29,9 @@ public class J_01_MergeString {
             sb.append(word2.charAt(i));
         }
 
-        if(word1.length() > word2.length()){
-            sb.append(word1, minLength, word1.length());
-        }
-        else if(word2.length() > word1.length()){
-            sb.append(word2, minLength, word2.length());
-        }
-
+        sb.append(word1, minLength, word1.length());
+        sb.append(word2, minLength, word2.length());
+        
         return sb.toString();
     }
 
