@@ -1,4 +1,4 @@
-public class J_09_StringCompression {
+public class J_12_StringCompression {
 
 
     public static void main(String[] args) {

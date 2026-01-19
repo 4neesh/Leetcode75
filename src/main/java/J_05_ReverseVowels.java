@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.List;
 
-public class J_04_ReverseVowels {
+public class J_05_ReverseVowels {
 
     public static void main(String[] args) {
 

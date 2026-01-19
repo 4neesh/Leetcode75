@@ -1,4 +1,4 @@
-public class J_12_CanPlaceFlowers {
+public class J_04_CanPlaceFlowers {
 
     public static void main(String[] args) {
 
