@@ -45,7 +45,6 @@ public class J_14_MaxNumberKSumPairs {
        int left = 0;
        int right = nums.length-1;
        while(left < right){
-
            int sum = nums[left] + nums[right];
            if(sum == k){
                result ++;
@@ -58,10 +57,7 @@ public class J_14_MaxNumberKSumPairs {
            else if(sum > k){
                right --;
            }
-
        }
-
-
        return result;
     }
 }
