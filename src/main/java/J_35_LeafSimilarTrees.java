@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class J_35_LeadSimilarTrees {
+public class J_35_LeafSimilarTrees {
 
     public static void main(String[] args) {
 
