@@ -18,7 +18,7 @@ public class J_36_CountGoodNodesInBT {
     }
 
     public static int goodNodes(TreeNode3 root) {
-        int count = dfs(root, 0);
+        int count = dfs(root, Integer.MIN_VALUE);
         return count;
     }
 
