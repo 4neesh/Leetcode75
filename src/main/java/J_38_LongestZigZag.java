@@ -1,20 +1,22 @@
+import util.TreeNode;
+
 public class J_38_LongestZigZag {
 
     public static void main(String[] args) {
         J_38_LongestZigZag aa = new J_38_LongestZigZag();
-        TreeNode7 a = new TreeNode7();
+        TreeNode a = new TreeNode();
         System.out.println(aa.longestZigZag(a));
 
     }
     private int maxCount = 0;
 
-    public int longestZigZag(TreeNode7 root) {
+    public int longestZigZag(TreeNode root) {
         dfs(root.left, true, 1);
         dfs(root.right, false, 1);
         return maxCount;
     }
 
-    public void dfs(TreeNode7 root, boolean fromLeft, int count){
+    public void dfs(TreeNode root, boolean fromLeft, int count){
 
         if(root == null){
             return;
@@ -29,18 +31,5 @@ public class J_38_LongestZigZag {
             dfs(root.right, false, 1);
         }
 
-    }
-}
-
-class TreeNode5 {
-    int val;
-    TreeNode7 left;
-    TreeNode7 right;
-    TreeNode5() {}
-    TreeNode5(int val) { this.val = val; }
-    TreeNode5(int val, TreeNode7 left, TreeNode7 right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

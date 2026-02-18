@@ -1,3 +1,5 @@
+import util.TreeNode;
+
 public class J_34_MaxDepthBinaryTree {
 
     public int maxDepth(TreeNode root){
@@ -9,17 +11,4 @@ public class J_34_MaxDepthBinaryTree {
         int rightDepth = maxDepth(root.right);
         return 1 + Math.max(leftDepth, rightDepth);
     }
-}
-
-class TreeNode {
-     int val;
-     TreeNode left;
-     TreeNode right;
-     TreeNode() {}
-     TreeNode(int val) { this.val = val; }
-     TreeNode(int val, TreeNode left, TreeNode right) {
-         this.val = val;
-         this.left = left;
-         this.right = right;
-     }
 }

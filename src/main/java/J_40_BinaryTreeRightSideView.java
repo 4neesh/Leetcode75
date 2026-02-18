@@ -1,3 +1,5 @@
+import util.TreeNode;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,14 +10,14 @@ public class J_40_BinaryTreeRightSideView {
 
     public static void main(String[] args) {
 
-        TreeNode7 a = new TreeNode7(1);
-        TreeNode7 b = new TreeNode7(2);
-        TreeNode7 c = new TreeNode7(3);
-        TreeNode7 d = new TreeNode7(4);
-        TreeNode7 e = new TreeNode7(5);
-        TreeNode7 f = new TreeNode7(6);
-        TreeNode7 g = new TreeNode7(7);
-        TreeNode7 h = new TreeNode7(8);
+        TreeNode a = new TreeNode(1);
+        TreeNode b = new TreeNode(2);
+        TreeNode c = new TreeNode(3);
+        TreeNode d = new TreeNode(4);
+        TreeNode e = new TreeNode(5);
+        TreeNode f = new TreeNode(6);
+        TreeNode g = new TreeNode(7);
+        TreeNode h = new TreeNode(8);
 
         a.left = b;
         a.right = c;
@@ -29,20 +31,20 @@ public class J_40_BinaryTreeRightSideView {
         System.out.println(bfs.rightSideView(a));
     }
 
-    public List<Integer> rightSideView(TreeNode7 root) {
+    public List<Integer> rightSideView(TreeNode root) {
         List<Integer> result = new ArrayList<>();
 
         if(root == null){
             return List.of();
         }
 
-        Queue<TreeNode7> currentLevel = new ArrayDeque<>();
+        Queue<TreeNode> currentLevel = new ArrayDeque<>();
         currentLevel.add(root);
-        Queue<TreeNode7> nextLevel = new ArrayDeque<>();
+        Queue<TreeNode> nextLevel = new ArrayDeque<>();
         Integer currentLevelVal = 0;
 
         while(!currentLevel.isEmpty()) {
-            for (TreeNode7 node : currentLevel) {
+            for (TreeNode node : currentLevel) {
                 currentLevelVal = node.val;
                 if (node.left != null) {
                     nextLevel.add(node.left);
@@ -57,18 +59,5 @@ public class J_40_BinaryTreeRightSideView {
             nextLevel = new ArrayDeque<>();
         }
         return result;
-    }
-}
-
-class TreeNode7 {
-    int val;
-    TreeNode7 left;
-    TreeNode7 right;
-    TreeNode7() {}
-    TreeNode7(int val) { this.val = val; }
-    TreeNode7(int val, TreeNode7 left, TreeNode7 right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

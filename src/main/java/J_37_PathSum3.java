@@ -1,7 +1,7 @@
+import util.TreeNode;
+
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class J_37_PathSum3 {
 
@@ -10,18 +10,18 @@ public class J_37_PathSum3 {
 
     public static void main(String[] args) {
 
-        TreeNode4 a = new TreeNode4(10);
-        TreeNode4 b = new TreeNode4(5);
-        TreeNode4 c = new TreeNode4(3);
-        TreeNode4 d = new TreeNode4(3);
-        TreeNode4 e = new TreeNode4(-2);
-        TreeNode4 f = new TreeNode4(2);
-        TreeNode4 g = new TreeNode4(1);
-        TreeNode4 h = new TreeNode4(-3);
-        TreeNode4 i = new TreeNode4(11);
-        TreeNode4 j = new TreeNode4(1);
-        TreeNode4 k = new TreeNode4(-2);
-        TreeNode4 l = new TreeNode4(-3);
+        TreeNode a = new TreeNode(10);
+        TreeNode b = new TreeNode(5);
+        TreeNode c = new TreeNode(3);
+        TreeNode d = new TreeNode(3);
+        TreeNode e = new TreeNode(-2);
+        TreeNode f = new TreeNode(2);
+        TreeNode g = new TreeNode(1);
+        TreeNode h = new TreeNode(-3);
+        TreeNode i = new TreeNode(11);
+        TreeNode j = new TreeNode(1);
+        TreeNode k = new TreeNode(-2);
+        TreeNode l = new TreeNode(-3);
 
 
         a.left = b;
@@ -39,13 +39,13 @@ public class J_37_PathSum3 {
         System.out.println(main.pathSum(a, 8));
     }
 
-    public int pathSum(TreeNode4 root, int targetSum) {
+    public int pathSum(TreeNode root, int targetSum) {
 
         this.dfs(root, targetSum, 0L);
         return this.count;
     }
 
-    private void dfs(TreeNode4 root, Integer targetSum, long cumulativeSum){
+    private void dfs(TreeNode root, Integer targetSum, long cumulativeSum){
         if(root == null){
             return;
         }
@@ -62,18 +62,4 @@ public class J_37_PathSum3 {
         this.cumulativeSums.merge(root.val + cumulativeSum, -1, Integer::sum);
     }
 
-}
-
-
-class TreeNode4 {
-    int val;
-    TreeNode4 left;
-    TreeNode4 right;
-    TreeNode4() {}
-    TreeNode4(int val) { this.val = val; }
-    TreeNode4(int val, TreeNode4 left, TreeNode4 right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
 }

@@ -1,17 +1,21 @@
+package patterns;
+
+import util.TreeNode;
+
 import java.util.*;
 
-public class Pattern_BreadthFirstSearch {
+public class BreadthFirstSearch {
 
     public static void main(String[] args) {
 
-        BFSTree a = new BFSTree(1);
-        BFSTree b = new BFSTree(2);
-        BFSTree c = new BFSTree(3);
-        BFSTree d = new BFSTree(4);
-        BFSTree e = new BFSTree(5);
-        BFSTree f = new BFSTree(6);
-        BFSTree g = new BFSTree(7);
-        BFSTree h = new BFSTree(8);
+        TreeNode a = new TreeNode(1);
+        TreeNode b = new TreeNode(2);
+        TreeNode c = new TreeNode(3);
+        TreeNode d = new TreeNode(4);
+        TreeNode e = new TreeNode(5);
+        TreeNode f = new TreeNode(6);
+        TreeNode g = new TreeNode(7);
+        TreeNode h = new TreeNode(8);
 
         a.left = b;
         a.right = c;
@@ -21,25 +25,25 @@ public class Pattern_BreadthFirstSearch {
         c.right = g;
         d.left = h;
 
-        Pattern_BreadthFirstSearch bfs = new Pattern_BreadthFirstSearch();
+        BreadthFirstSearch bfs = new BreadthFirstSearch();
         System.out.println(bfs.levelOrderTraversal(a));
 
     }
 
-    public List<List<Integer>> levelOrderTraversal(BFSTree root){
+    public List<List<Integer>> levelOrderTraversal(TreeNode root){
 
         if(root == null){
             return List.of();
         }
 
-        Queue<BFSTree> current = new ArrayDeque<>();
+        Queue<TreeNode> current = new ArrayDeque<>();
         current.add(root);
-        Queue<BFSTree> nextLevel = new ArrayDeque<>();
+        Queue<TreeNode> nextLevel = new ArrayDeque<>();
         List<Integer> level = new ArrayList<>();
         List<List<Integer>> result = new ArrayList<>();
         while(!current.isEmpty()){
 
-            for(BFSTree node: current){
+            for(TreeNode node: current){
                 level.add(node.val);
                 if(node.left != null){
                     nextLevel.add(node.left);
@@ -55,19 +59,5 @@ public class Pattern_BreadthFirstSearch {
         }
 
         return result;
-    }
-}
-
-
-class BFSTree {
-    int val;
-    BFSTree left;
-    BFSTree right;
-    BFSTree() {}
-    BFSTree(int val) { this.val = val; }
-    BFSTree(int val, BFSTree left, BFSTree right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

@@ -1,3 +1,4 @@
+import util.ListNode;
 
 public class J_30_DeleteMiddleNode {
 
@@ -48,10 +49,4 @@ public class J_30_DeleteMiddleNode {
 }
 
 
-class ListNode {
-     int val;
-     ListNode next;
-     ListNode() {}
-     ListNode(int val) { this.val = val; }
-     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-}
+

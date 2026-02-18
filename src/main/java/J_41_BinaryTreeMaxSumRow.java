@@ -1,3 +1,5 @@
+import util.TreeNode;
+
 import java.util.ArrayDeque;
 import java.util.Queue;
 
@@ -5,14 +7,14 @@ public class J_41_BinaryTreeMaxSumRow {
 
     public static void main(String[] args) {
 
-        TreeNode8 a = new TreeNode8(1);
-        TreeNode8 b = new TreeNode8(2);
-        TreeNode8 c = new TreeNode8(3);
-        TreeNode8 d = new TreeNode8(4);
-        TreeNode8 e = new TreeNode8(5);
-        TreeNode8 f = new TreeNode8(6);
-        TreeNode8 g = new TreeNode8(7);
-        TreeNode8 h = new TreeNode8(23);
+        TreeNode a = new TreeNode(1);
+        TreeNode b = new TreeNode(2);
+        TreeNode c = new TreeNode(3);
+        TreeNode d = new TreeNode(4);
+        TreeNode e = new TreeNode(5);
+        TreeNode f = new TreeNode(6);
+        TreeNode g = new TreeNode(7);
+        TreeNode h = new TreeNode(23);
 
         a.left = b;
         a.right = c;
@@ -26,12 +28,12 @@ public class J_41_BinaryTreeMaxSumRow {
         System.out.println(bfs.maxLevelSum(a));
     }
 
-    public int maxLevelSum(TreeNode8 root) {
+    public int maxLevelSum(TreeNode root) {
         int maxLevel = 1;
         int currentLevelInt = 1;
         int maxSum = Integer.MIN_VALUE;
-        Queue<TreeNode8> currentLevel = new ArrayDeque<>();
-        Queue<TreeNode8> nextLevel = new ArrayDeque<>();
+        Queue<TreeNode> currentLevel = new ArrayDeque<>();
+        Queue<TreeNode> nextLevel = new ArrayDeque<>();
 
         if(root == null){
             return -1;
@@ -41,7 +43,7 @@ public class J_41_BinaryTreeMaxSumRow {
         while(!currentLevel.isEmpty()){
 
             int currentSum = 0;
-            for(TreeNode8 node: currentLevel){
+            for(TreeNode node: currentLevel){
                 currentSum += node.val;
                 if(node.left != null){
                     nextLevel.add(node.left);
@@ -60,18 +62,5 @@ public class J_41_BinaryTreeMaxSumRow {
             currentLevelInt++;
         }
         return maxLevel;
-    }
-}
-
-class TreeNode8 {
-    int val;
-    TreeNode8 left;
-    TreeNode8 right;
-    TreeNode8() {}
-    TreeNode8(int val) { this.val = val; }
-    TreeNode8(int val, TreeNode8 left, TreeNode8 right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
     }
 }

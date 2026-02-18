@@ -1,3 +1,5 @@
+import util.ListNode;
+
 public class J_31_OddEvenLinkedList {
 
     public static void main(String[] args) {
@@ -6,11 +8,11 @@ public class J_31_OddEvenLinkedList {
 
     }
 
-    public ListNode2 oddEvenList(ListNode2 head) {
+    public ListNode oddEvenList(ListNode head) {
 
-        ListNode2 odd = head;
-        ListNode2 even = null;
-        ListNode2 evenHead = null;
+        ListNode odd = head;
+        ListNode even = null;
+        ListNode evenHead = null;
 
         if(head == null || head.next == null){
             return head;
@@ -29,12 +31,4 @@ public class J_31_OddEvenLinkedList {
     }
 
 
-}
-
-class ListNode2 {
-    int val;
-    ListNode2 next;
-    ListNode2() {}
-    ListNode2(int val) { this.val = val; }
-    ListNode2(int val, ListNode2 next) { this.val = val; this.next = next; }
 }
